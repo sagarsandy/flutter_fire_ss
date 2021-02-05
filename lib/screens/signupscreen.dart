@@ -49,6 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       .createUserWithEmailAndPassword(
                           email: email, password: password)
                       .then((UserCredential user) {
+                    print('signup success');
                     print(FirebaseAuth.instance.currentUser.uid);
                     print(FirebaseAuth.instance.currentUser.email);
 //                    Navigator.of(context).pop();
@@ -70,7 +71,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 color: Colors.orange,
                 textColor: Colors.white,
                 elevation: 7.0,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
               ),
             ],
           ),

@@ -23,7 +23,7 @@ class _SignInScreenState extends State<SignInScreen> {
   registerWithPhoneNumber() async {
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber:
-          '+91 1234 567 890', // Test phone numbers need to add in firebase app
+          '+91 7981466038', // Test phone numbers need to add in firebase app
       timeout: Duration(seconds: 40),
       verificationCompleted: (PhoneAuthCredential credential) {
         FirebaseAuth.instance.signInWithCredential(credential).then((value) {
@@ -38,17 +38,17 @@ class _SignInScreenState extends State<SignInScreen> {
       codeSent: (String verificationId, int resendToken) {
         String smsCode = '123456'; // Test OTP need to add in firebase app
         // Create a PhoneAuthCredential with the code
-        PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
-            verificationId: verificationId, smsCode: smsCode);
-
-        // Sign the user in (or link) with the credential
-        FirebaseAuth.instance
-            .signInWithCredential(phoneAuthCredential)
-            .then((value) {
-          print('Entered manually');
-          print(FirebaseAuth.instance.currentUser.uid);
-          print(FirebaseAuth.instance.currentUser.phoneNumber);
-        });
+        // PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
+        //     verificationId: verificationId, smsCode: smsCode);
+        //
+        // // Sign the user in (or link) with the credential
+        // FirebaseAuth.instance
+        //     .signInWithCredential(phoneAuthCredential)
+        //     .then((value) {
+        //   print('Entered manually');
+        //   print(FirebaseAuth.instance.currentUser.uid);
+        //   print(FirebaseAuth.instance.currentUser.phoneNumber);
+        // });
       },
       codeAutoRetrievalTimeout: (String verificationId) {
         print('Timed out');

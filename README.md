@@ -3,7 +3,7 @@
 Firebase Console:
 1. Create one project, if u don't have any
 2. Create one app(android/ios) inside the project and download the respective file
-3. Create database(cloud firestore native) inside the project.
+3. Create database(cloud fire store native) inside the project.
 4. Modify the database rules to public for now.
 
 
